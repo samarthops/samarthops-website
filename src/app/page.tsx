@@ -79,13 +79,9 @@ export default function HomePage() {
             <li key={s.title}>
               <Reveal className="h-full rounded-xl border border-line bg-white p-5">
                 <h3 className="text-lg font-semibold text-navy">
-                  {s.live ? (
-                    <Link href={s.href} className="hover:text-brand-dark">
-                      {s.title}
-                    </Link>
-                  ) : (
-                    s.title
-                  )}
+                  <Link href={s.href} className="hover:text-brand-dark">
+                    {s.title}
+                  </Link>
                 </h3>
                 <p className="mt-2 text-sm text-ink">{s.text}</p>
               </Reveal>

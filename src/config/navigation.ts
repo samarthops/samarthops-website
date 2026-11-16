@@ -3,6 +3,7 @@ export type NavItem = { label: string; href: string; /** Static HTML file outsid
 /** Header navigation. Entries are added as each page ships (no dead links). */
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
   { label: "SamarthOps HRMS", href: "/products/hrms" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
