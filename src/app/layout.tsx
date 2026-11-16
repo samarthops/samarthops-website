@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { JsonLd } from "@/components/common/json-ld";
+import { RevealObserver } from "@/components/common/reveal-observer";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   alternates: { canonical: "/" },
+  icons: { icon: [{ url: "/images/branding/Samarth-Ops-symbol.svg", type: "image/svg+xml" }] },
 };
 
 const orgLd = {
@@ -58,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <WhatsAppButton />
+        <RevealObserver />
       </body>
     </html>
   );
