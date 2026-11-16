@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { JsonLd } from "@/components/common/json-ld";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -18,6 +19,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const orgLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#org`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/images/branding/Samarth-Ops-symbol-512.png`,
+      email: siteConfig.supportEmail,
+    },
+    {
+      "@type": "WebSite",
+      url: siteConfig.url,
+      name: siteConfig.name,
+      publisher: { "@id": `${siteConfig.url}/#org` },
+    },
+  ],
+};
+
 export const viewport: Viewport = { themeColor: "#0070FF" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <JsonLd data={orgLd} />
         <Header />
         <main id="main" className="flex-1">
           {children}

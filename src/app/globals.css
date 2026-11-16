@@ -27,7 +27,7 @@
   --card-foreground: var(--ink);
   --popover: #ffffff;
   --popover-foreground: var(--ink);
-  --primary: var(--brand);
+  --primary: var(--brand-dark);
   --primary-foreground: #ffffff;
   --secondary: var(--soft);
   --secondary-foreground: var(--navy);
