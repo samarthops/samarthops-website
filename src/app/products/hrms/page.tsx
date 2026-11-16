@@ -56,7 +56,7 @@ export default function HrmsPage() {
               {wa && (
                 <Button asChild size="xl" variant="outline">
                   <a href={wa} rel="noopener noreferrer">
-                    <MessageCircle className="size-4" aria-hidden="true" /> WhatsApp us
+                    <MessageCircle className="size-4" aria-hidden="true" /> Chat on WhatsApp
                   </a>
                 </Button>
               )}

@@ -18,6 +18,7 @@ const paths = [
   "/terms",
   "/privacy",
   "/support",
+  "/delete-data",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

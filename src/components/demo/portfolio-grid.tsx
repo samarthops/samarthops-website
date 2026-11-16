@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Building2, ChefHat, GraduationCap, HeartPulse, Store, type LucideIcon } from "lucide-react";
+import { ArrowRight, Building2, ChefHat, Cog, GraduationCap, HeartPulse, Store, Zap, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { demoProjects, similarHref, type DemoProject } from "@/data/portfolio";
 
@@ -12,6 +12,8 @@ const ICONS: Record<DemoProject["slug"], LucideIcon> = {
   "medicare-plus": HeartPulse,
   primeestate: Building2,
   brightfuture: GraduationCap,
+  voltcare: Zap,
+  torquetech: Cog,
 };
 
 export function PortfolioGrid() {

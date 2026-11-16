@@ -37,11 +37,17 @@ export default function ContactPage() {
           )}
           <p className="flex items-center gap-2 text-ink">
             <Mail className="size-4 shrink-0" aria-hidden="true" />
-            <a href={`mailto:${siteConfig.supportEmail}`} className="font-medium text-brand-dark underline">
-              {siteConfig.supportEmail}
+            <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-medium text-brand-dark underline">
+              {siteConfig.enquiryEmail}
             </a>
           </p>
-          <p className="text-sm text-ink">Looking for help with the SamarthOps HRMS app? Use the support page linked in the footer.</p>
+          <p className="text-sm text-ink">
+            Looking for help with the SamarthOps HRMS app? Visit the{" "}
+            <a href="/support" className="font-medium text-brand-dark underline">
+              support page
+            </a>
+            .
+          </p>
         </aside>
       </div>
     </div>

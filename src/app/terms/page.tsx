@@ -56,8 +56,8 @@ export default function TermsPage() {
       <h2>Changes and contact</h2>
       <p>
         We may update these terms; the version on this page applies. Questions:{" "}
-        <a href={`mailto:${siteConfig.supportEmail}`} className="font-medium text-brand-dark underline">
-          {siteConfig.supportEmail}
+        <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-medium text-brand-dark underline">
+          {siteConfig.enquiryEmail}
         </a>
         .
       </p>

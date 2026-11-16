@@ -6,20 +6,20 @@ Keep this file under 150 lines: rules and decisions only. The full build plan is
 
 The public website of **Samarth Ops** (software development firm, Pune) at `https://samarthops.in` (`www` redirects to the apex). It has two jobs:
 1. Sell the firm's real product, the **SamarthOps HRMS** app (built in the separate repository `samarthops/samarthops`), through a "Request demo" flow.
-2. Win custom Android app, website and software work, shown through five clearly labelled concept demos.
+2. Win custom Android app, website and software work, shown through seven clearly labelled concept demos.
 
 Stack: Next.js (App Router, `output: 'export'`, static) + TypeScript strict + Tailwind CSS + shadcn/ui + Lucide + Motion; React Hook Form + Zod; Playwright, ESLint, `tsc --noEmit`. Hosting: **Cloudflare Pages**; the contact form is one Pages Function (`functions/api/contact.ts`) that verifies Cloudflare Turnstile and sends mail through **Brevo**. No database, no server, no other backend.
 
 ## Owner decisions (16 Nov 2026, do not reopen)
 
 - Hosting is Cloudflare Pages, not Vercel (Vercel's free plan is non-commercial; DNS is already on Cloudflare).
-- Mail: Brevo sends (sender `noreply@samarthops.in`, already verified); mailboxes are Zoho (`support@samarthops.in`). No Resend, no new mail vendor.
+- Mail: Brevo sends (sender `noreply@samarthops.in`, already verified); mailboxes are Zoho (`support@samarthops.in` for the app, `enquiry@samarthops.in` for website enquiries). No Resend, no new mail vendor.
 - The WhatsApp number is published on the site (floating button, contact page, footer). It is set once in `src/config/site.ts`; never repeat it in docs, commits or chat.
 - Business claims allowed on the site: **8+ years of experience** and **100+ customised Android apps and websites**. No other numbers, no client names, logos, testimonials, ratings, awards, team size or address.
 - HRMS page: pricing is never shown; every CTA is "Request HRMS demo" or WhatsApp.
 - HRMS platforms: **Android available**, **iOS coming soon**. A Google Play badge links only once the production listing is public (check before adding it).
 - HRMS feature list: the full catalogue list in `docs/MASTER_PLAN.md` section 4 is approved for publishing as is. Some items are built on demand when a customer asks (internal table in that section); never mark them on the site as "coming soon" unless the owner says so.
-- The five demos are **concept demos** with the label: "Concept demonstration developed by Samarth Ops. This project showcases our design and development capabilities and is not presented as a completed client engagement."
+- The seven demos are **concept demos** with the label: "Concept demonstration developed by Samarth Ops. This project showcases our design and development capabilities and is not presented as a completed client engagement."
 
 ## URLs that must never break
 

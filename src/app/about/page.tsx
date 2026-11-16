@@ -51,7 +51,7 @@ export default function AboutPage() {
             <Link href="/products/hrms">See SamarthOps HRMS</Link>
           </Button>
           <Button asChild size="xl" variant="outline">
-            <Link href="/contact">Discuss your project</Link>
+            <Link href="/contact">Discuss Your Project</Link>
           </Button>
         </div>
       </Section>

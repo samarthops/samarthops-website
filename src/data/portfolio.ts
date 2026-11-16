@@ -9,7 +9,7 @@ export const conceptLabel =
   "Concept demonstration developed by Samarth Ops. This project showcases our design and development capabilities and is not presented as a completed client engagement.";
 
 export type DemoProject = {
-  slug: "foodnest" | "shopease" | "medicare-plus" | "primeestate" | "brightfuture";
+  slug: "foodnest" | "shopease" | "medicare-plus" | "primeestate" | "brightfuture" | "voltcare" | "torquetech";
   name: string;
   /** Short industry label used by the portfolio filter. */
   industry: string;
@@ -65,6 +65,24 @@ export const demoProjects: DemoProject[] = [
       "A school website: courses, faculty, admissions steps, events and announcements, a photo gallery and a demo admission enquiry.",
     formService: "website",
     preview: { from: "#EDE9FE", to: "#FACC15", ink: "#3B0764" },
+  },
+  {
+    slug: "voltcare",
+    name: "VoltCare Services",
+    industry: "Electronics services",
+    summary:
+      "An electrical and electronics repair site: filter the service catalogue, book a visit with a time slot and track a ticket by its number.",
+    formService: "website",
+    preview: { from: "#1F2937", to: "#A3E635", ink: "#0A0A0A" },
+  },
+  {
+    slug: "torquetech",
+    name: "TorqueTech Components",
+    industry: "Manufacturing",
+    summary:
+      "A mechanical parts maker's site: filter the catalogue by category and material, read part specifications and build a quote request.",
+    formService: "website",
+    preview: { from: "#CBD2D9", to: "#FB923C", ink: "#1F2933" },
   },
 ];
 

@@ -31,7 +31,7 @@ const orgLd = {
       name: siteConfig.name,
       url: siteConfig.url,
       logo: `${siteConfig.url}/images/branding/Samarth-Ops-symbol-512.png`,
-      email: siteConfig.supportEmail,
+      email: siteConfig.enquiryEmail,
     },
     {
       "@type": "WebSite",

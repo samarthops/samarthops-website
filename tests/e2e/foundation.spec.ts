@@ -27,7 +27,7 @@ for (const slug of LEGAL) {
     expect(res.headers()["content-type"]).toContain("text/html");
   });
 
-  test(`/${slug} is an unchanged copy of the HRMS file`, async () => {
+  test(`/${slug} has the same text as the HRMS file (header, footer and styling may differ)`, async () => {
     const source = path.resolve(__dirname, "../../../samarthops/deployment/site", `${slug}.html`);
     let expected: Buffer;
     try {
@@ -39,7 +39,10 @@ for (const slug of LEGAL) {
     const actual = readFileSync(path.resolve(__dirname, "../../public", `${slug}.html`));
     // Git on Windows may check the file out with CRLF; the committed blob is LF like the source.
     const lf = (b: Buffer) => b.toString("utf8").split("\r\n").join("\n");
-    expect(lf(actual)).toBe(lf(expected));
+    // Only the page chrome (header, footer, stylesheet) is restyled here; the <main> text must match the source.
+    const main = (b: Buffer) => lf(b).match(/<main>[\s\S]*?<\/main>/)?.[0];
+    expect(main(actual)).toBeTruthy();
+    expect(main(actual)).toBe(main(expected));
   });
 }
 
