@@ -88,7 +88,7 @@ Later (also on the owner's "go"): redirect `samarthops.com` and `www.samarthops.
 
 ## Updating the Play-linked pages
 
-`public/privacy.html`, `support.html`, `delete-data.html` and `style.css` are copies from the HRMS repository (`deployment/site/`). Never rewrite them here. When the notice version changes there, copy the files again and run the word-for-word test in `tests/e2e/`.
+`public/privacy.html`, `support.html` and `delete-data.html` are copies from the HRMS repository (`deployment/site/`). The `<main>` block is the source text and is never rewritten here; the header, footer and `public/style.css` (with the self-hosted font in `public/fonts/`) are this site's own, so the pages match the rest of the site. When the notice version changes in the HRMS repository, copy its new `<main>` block into the file here, keep the header and footer, then update the three hashes in `tests/e2e/play-pages.spec.ts` and run `tests/e2e/foundation.spec.ts` (compares the text with the HRMS checkout).
 
 ## Troubleshooting
 

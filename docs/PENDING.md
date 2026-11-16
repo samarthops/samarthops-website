@@ -12,10 +12,6 @@ Open work that is not part of the current phase. Remove an item when it is done.
 - Share image is the Play banner (temporary).
 - Home hero secondary CTA points to HRMS; no featured-work section until phases 4-6.
 
-- **Play-linked pages styling:** `/privacy`, `/support` and `/delete-data` (static `public/*.html`) do not use the site's CSS and formatting (header, footer, fonts, colours), so they look different from the rest of the site. Update the look only.
-  - Constraints: keep the exact paths, status 200 (no redirect), and the wording word for word (the notice is copied from the HRMS repository and never rewritten here).
-  - Decide first: keep them as static HTML with the brand stylesheet added, or render them inside the Next.js layout. The second must still output the same text and the same paths with `trailingSlash: false`.
-  - Re-run the word-for-word test in `tests/e2e/` after the change.
 
 ## Assets
 - HRMS screenshots are CSS mockups; replace with demo-data screenshots from the review server's demo company.
