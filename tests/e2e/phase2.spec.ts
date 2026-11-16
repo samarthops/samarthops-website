@@ -61,7 +61,7 @@ test("home: only the allowed business claims, no links to unbuilt sections", asy
   expect(text).toContain("8+");
   expect(text).toContain("100+");
   expect(text.toLowerCase()).not.toMatch(/testimonial|awards?|rated|clients? like/);
-  for (const dead of ["/portfolio", "/demos"]) {
+  for (const dead of ["/demos"]) {
     await expect(page.locator(`a[href^="${dead}"]`)).toHaveCount(0);
   }
 });

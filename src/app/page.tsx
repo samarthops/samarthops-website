@@ -5,6 +5,7 @@ import { Section } from "@/components/common/section";
 import { Reveal } from "@/components/common/reveal";
 import { BrowserMockup, PhoneMockup } from "@/components/common/mockups";
 import { hrmsHighlights } from "@/data/hrms";
+import { demoProjects } from "@/data/portfolio";
 import { services, whySamarth } from "@/data/services";
 import { whatsappMessages } from "@/data/enquiry";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -115,7 +116,30 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="why" title="Why Samarth Ops">
+      <Section
+        id="portfolio"
+        title="See what we can build"
+        intro="Concept demos you can try right now, each with its own design."
+      >
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {demoProjects.map((d) => (
+            <li key={d.slug} className="rounded-xl border border-line bg-white p-5">
+              <p className="text-xs font-semibold tracking-wide text-brand-dark uppercase">{d.industry}</p>
+              <h3 className="mt-1 text-lg font-semibold text-navy">
+                <Link href={`/portfolio/${d.slug}`} className="hover:text-brand-dark">
+                  {d.name}
+                </Link>
+              </h3>
+              <p className="mt-2 text-sm text-ink">{d.summary}</p>
+            </li>
+          ))}
+        </ul>
+        <Button asChild variant="outline" size="xl" className="mt-6">
+          <Link href="/portfolio">View all demos</Link>
+        </Button>
+      </Section>
+
+      <Section id="why" tone="soft" title="Why Samarth Ops">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {whySamarth.map((w) => (
             <li key={w.title}>
