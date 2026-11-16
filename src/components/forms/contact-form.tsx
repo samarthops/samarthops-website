@@ -10,6 +10,7 @@ import { whatsappMessages } from "@/data/enquiry";
 import { siteConfig } from "@/config/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { SERVICES, type ServiceValue } from "@/lib/services";
+import { getDemo, similarMessage } from "@/data/portfolio";
 import type { ContactInput } from "@/lib/contact-schema";
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
@@ -84,10 +85,14 @@ export function ContactForm({
   // Preselect from ?service=... on the contact page (static export: read it in the browser).
   useEffect(() => {
     if (defaultService) return;
-    const param = new URLSearchParams(window.location.search).get("service");
+    const params = new URLSearchParams(window.location.search);
+    const param = params.get("service");
     if (param && SERVICES.some((s) => s.value === param)) {
       setValue("service", param as ServiceValue);
     }
+    // "Build something similar" from a portfolio demo: start the message for the visitor.
+    const demo = getDemo(params.get("demo") ?? "");
+    if (demo) setValue("message", similarMessage(demo));
   }, [defaultService, setValue]);
 
   const disabled = !SITE_KEY || captchaBroken;
