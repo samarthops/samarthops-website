@@ -29,5 +29,10 @@ Cloudflare Pages (Settings > Variables and Secrets).
 - `src/config/site.ts`: site identity and the WhatsApp number (empty until the owner fills it in; the floating button and WhatsApp links stay hidden while it is empty).
 - `src/config/navigation.ts`: header and footer links.
 - `public/privacy.html`, `support.html`, `delete-data.html`, `style.css`: unchanged copies from the HRMS repository (`deployment/site/`). They are linked from the Google Play listing and must keep the paths `/privacy`, `/support`, `/delete-data` (200, no redirect). Do not edit them here; copy them again when the HRMS notice changes.
+- `src/app/`: pages (`/`, `/products/hrms`, `/about`, `/contact`, `/website-privacy`, `/terms`), `robots.ts`, `sitemap.ts`. Every page sets its metadata through `pageMetadata()` in `src/lib/seo.ts`; add new pages to `sitemap.ts` and to the nav only when they ship (no dead links).
+- `src/data/`: page content as data (`hrms.ts` approved feature catalogue, `services.ts` with `live: false` until the service pages exist, `enquiry.ts` WhatsApp messages).
+- `src/components/common/`: `Section`, `Reveal` (motion, below the fold only), `PhoneMockup`/`BrowserMockup` (CSS mockups, labelled illustrative until real demo-data screenshots exist), `JsonLd`.
+- `src/components/forms/`: `ContactForm` and the Cloudflare Turnstile widget. Without `NEXT_PUBLIC_TURNSTILE_SITE_KEY` the form is disabled and says so.
+- `functions/api/contact.ts`: the only backend. A Pages Function that verifies Turnstile and sends mail through Brevo; returns `{ok:true}` only when Brevo accepts the mail. Needs `BREVO_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `TURNSTILE_SECRET_KEY` (set in Cloudflare Pages, names in `.env.example`). `public/_routes.json` limits Functions to `/api/*`.
 - `public/_headers`: Cloudflare Pages security and cache headers.
 - `public/images/branding/`: logo files, never modified.

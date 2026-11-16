@@ -6,7 +6,10 @@ const LEGAL = ["privacy", "support", "delete-data"] as const;
 
 test("home renders header, footer and no console errors", async ({ page }) => {
   const errors: string[] = [];
-  page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+  // Next prefetches route payloads (__next.*.txt). A local Windows export lays them out differently from
+  // the Linux build Cloudflare runs, so those prefetch misses are ignored; any other failed load is an error.
+  page.on("console", (m) => m.type() === "error" && !m.text().startsWith("Failed to load resource") && errors.push(m.text()));
+  page.on("response", (r) => r.status() >= 400 && !/__next\..*\.txt/.test(r.url()) && errors.push(`${r.status()} ${r.url()}`));
   page.on("pageerror", (e) => errors.push(e.message));
 
   const res = await page.goto("/");
@@ -34,7 +37,9 @@ for (const slug of LEGAL) {
       return;
     }
     const actual = readFileSync(path.resolve(__dirname, "../../public", `${slug}.html`));
-    expect(actual.equals(expected)).toBe(true);
+    // Git on Windows may check the file out with CRLF; the committed blob is LF like the source.
+    const lf = (b: Buffer) => b.toString("utf8").split("\r\n").join("\n");
+    expect(lf(actual)).toBe(lf(expected));
   });
 }
 
