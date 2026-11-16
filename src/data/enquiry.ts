@@ -1,4 +1,4 @@
-import type { ServiceValue } from "@/lib/contact-schema";
+import type { ServiceValue } from "@/lib/services";
 
 /** Prefilled WhatsApp text per service (contact page). */
 export const whatsappMessages: Record<ServiceValue, string> = {

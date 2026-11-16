@@ -1,19 +1,12 @@
 import { z } from "zod";
+import { SERVICES, type ServiceValue } from "./services";
 
 /**
  * Enquiry form schema. Imported by the browser form AND by the Pages Function
  * (relative import there), so both sides validate identically.
  */
-export const SERVICES = [
-  { value: "android", label: "Android app" },
-  { value: "website", label: "Website" },
-  { value: "ecommerce", label: "E-commerce" },
-  { value: "custom-software", label: "Custom software" },
-  { value: "hrms", label: "SamarthOps HRMS" },
-  { value: "other", label: "Other" },
-] as const;
+export { SERVICES, serviceLabel, type ServiceValue } from "./services";
 
-export type ServiceValue = (typeof SERVICES)[number]["value"];
 const serviceValues = SERVICES.map((s) => s.value) as [ServiceValue, ...ServiceValue[]];
 
 export const contactSchema = z.object({
@@ -39,7 +32,3 @@ export const contactSchema = z.object({
 export type ContactInput = z.infer<typeof contactSchema>;
 
 export const MAX_BODY_BYTES = 10 * 1024;
-
-export function serviceLabel(value: ServiceValue): string {
-  return SERVICES.find((s) => s.value === value)?.label ?? value;
-}

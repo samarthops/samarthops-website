@@ -2,17 +2,26 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useForm, useWatch } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, useWatch, type Resolver } from "react-hook-form";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Turnstile } from "@/components/forms/turnstile";
 import { whatsappMessages } from "@/data/enquiry";
 import { siteConfig } from "@/config/site";
 import { whatsappUrl } from "@/lib/whatsapp";
-import { contactSchema, SERVICES, type ContactInput, type ServiceValue } from "@/lib/contact-schema";
+import { SERVICES, type ServiceValue } from "@/lib/services";
+import type { ContactInput } from "@/lib/contact-schema";
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+
+/** Loads zod and the schema on first validation, so they stay out of the initial page JS. */
+const lazyZodResolver: Resolver<ContactInput> = async (values, context, options) => {
+  const [{ zodResolver }, { contactSchema }] = await Promise.all([
+    import("@hookform/resolvers/zod"),
+    import("@/lib/contact-schema"),
+  ]);
+  return zodResolver(contactSchema)(values, context, options) as ReturnType<Resolver<ContactInput>>;
+};
 
 type Status = "idle" | "sending" | "success" | "error" | "verification";
 
@@ -52,7 +61,7 @@ export function ContactForm({
     reset,
     formState: { errors, isSubmitted },
   } = useForm<ContactInput>({
-    resolver: zodResolver(contactSchema),
+    resolver: lazyZodResolver,
     defaultValues: {
       name: "",
       business: "",
