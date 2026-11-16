@@ -9,7 +9,7 @@ export const conceptLabel =
   "Concept demonstration developed by Samarth Ops. This project showcases our design and development capabilities and is not presented as a completed client engagement.";
 
 export type DemoProject = {
-  slug: "foodnest" | "shopease";
+  slug: "foodnest" | "shopease" | "medicare-plus" | "primeestate" | "brightfuture";
   name: string;
   /** Short industry label used by the portfolio filter. */
   industry: string;
@@ -38,6 +38,33 @@ export const demoProjects: DemoProject[] = [
       "An online store: search and filter the catalogue, save favourites to a wishlist, fill a cart and complete a simulated checkout.",
     formService: "ecommerce",
     preview: { from: "#E5E7EB", to: "#FCD34D", ink: "#111827" },
+  },
+  {
+    slug: "medicare-plus",
+    name: "MediCare Plus",
+    industry: "Clinic",
+    summary:
+      "A clinic website: browse departments, filter doctors, read profiles, pick an appointment slot and send a demo enquiry.",
+    formService: "website",
+    preview: { from: "#CCFBF1", to: "#14B8A6", ink: "#0B4F4A" },
+  },
+  {
+    slug: "primeestate",
+    name: "PrimeEstate",
+    industry: "Real estate",
+    summary:
+      "A property site: search listings, filter by price and location, flip through a photo gallery, save favourites and schedule a visit.",
+    formService: "website",
+    preview: { from: "#FAF7F0", to: "#C9A227", ink: "#14213D" },
+  },
+  {
+    slug: "brightfuture",
+    name: "BrightFuture Academy",
+    industry: "School",
+    summary:
+      "A school website: courses, faculty, admissions steps, events and announcements, a photo gallery and a demo admission enquiry.",
+    formService: "website",
+    preview: { from: "#EDE9FE", to: "#FACC15", ink: "#3B0764" },
   },
 ];
 
