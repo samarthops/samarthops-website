@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { JsonLd } from "@/components/common/json-ld";
+import { RouteJsonLd } from "@/components/common/route-json-ld";
 import { RevealObserver } from "@/components/common/reveal-observer";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <JsonLd data={orgLd} />
+        <RouteJsonLd />
         <Header />
         <main id="main" className="flex-1">
           {children}
