@@ -116,7 +116,7 @@ export function MediCareApp() {
               [String(doctors.length), "Doctors"],
               ["Mon-Wed", "Demo slots"],
             ].map(([n, l]) => (
-              <li key={l} className="rounded-2xl bg-white/15 p-3">
+              <li key={l} className="rounded-2xl bg-[#0A4F4A] p-3">
                 <p className="text-xl font-extrabold">{n}</p>
                 <p>{l}</p>
               </li>

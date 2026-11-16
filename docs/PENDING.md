@@ -21,7 +21,7 @@ Open work that is not part of the current phase. Remove an item when it is done.
 - HRMS screenshots are CSS mockups; replace with demo-data screenshots from the review server's demo company.
 
 ## Checks
-- Phase 2 exit: real mail on the preview, Lighthouse 90+ mobile on Home, HRMS and Contact.
+- Phase 2 exit: real mail on the preview, Lighthouse 90+ mobile on Home, HRMS and Contact. Local run on the static export (plain `serve`, no compression or cache headers) on 16 Nov 2026: accessibility 100, SEO 100, best practices 96 to 100, performance 79 (Home), 84 (HRMS), 81 (Contact). Re-measure on the Cloudflare preview; performance needs 90+ there.
 - Confirm the `__next.*.txt` 404s seen on the local Windows export do not appear on the preview.
 
 ## DNS (owner's explicit "go" only)
