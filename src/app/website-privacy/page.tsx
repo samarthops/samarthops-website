@@ -18,6 +18,14 @@ export default function WebsitePrivacyPage() {
         <a href="/privacy" className="font-medium text-brand-dark underline">
           app privacy notice
         </a>
+        . For help with the app or to ask for your app data to be deleted, see the{" "}
+        <a href="/support" className="font-medium text-brand-dark underline">
+          support page
+        </a>{" "}
+        and the{" "}
+        <a href="/delete-data" className="font-medium text-brand-dark underline">
+          data deletion page
+        </a>
         .
       </p>
 
@@ -48,8 +56,8 @@ export default function WebsitePrivacyPage() {
       <h2>Your choices</h2>
       <p>
         To ask what we hold about you, to correct it, or to have it deleted, write to{" "}
-        <a href={`mailto:${siteConfig.supportEmail}`} className="font-medium text-brand-dark underline">
-          {siteConfig.supportEmail}
+        <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-medium text-brand-dark underline">
+          {siteConfig.enquiryEmail}
         </a>
         .
       </p>

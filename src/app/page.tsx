@@ -89,6 +89,9 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+        <Button asChild variant="outline" size="xl" className="mt-6">
+          <Link href="/services">View all services</Link>
+        </Button>
       </Section>
 
       <Section tone="soft">

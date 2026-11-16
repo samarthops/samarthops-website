@@ -55,6 +55,15 @@ export function MobileMenu() {
             </Link>
           ))}
         </nav>
+        <div className="px-4 pt-4">
+          <Link
+            href="/contact"
+            onClick={close}
+            className="block rounded-md bg-brand-dark px-4 py-3 text-center text-base font-semibold text-white hover:opacity-90"
+          >
+            Send an enquiry
+          </Link>
+        </div>
       </dialog>
     </div>
   );

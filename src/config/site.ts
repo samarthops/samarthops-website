@@ -8,7 +8,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://samarthops.in",
   description:
     "Samarth Ops is a software development firm in Pune building custom Android apps, websites and business software, and the SamarthOps HRMS app.",
-  supportEmail: "support@samarthops.in",
+  enquiryEmail: "enquiry@samarthops.in",
   /**
    * WhatsApp number in international format, digits only (country code first,
    * no "+", no spaces). OWNER: fill this in yourself. While it is empty the

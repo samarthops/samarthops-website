@@ -29,7 +29,7 @@ const SKIP = new Set(["/products"]);
 const CONCEPT_NOTE =
   "Concept demonstration developed by Samarth Ops. Not a completed client engagement.";
 
-/** BreadcrumbList for every inner page, and WebPage markup for the five concept demos. */
+/** BreadcrumbList for every inner page, and WebPage markup for the concept demos. */
 export function RouteJsonLd() {
   const pathname = (usePathname() ?? "/").replace(/\/$/, "") || "/";
   if (pathname === "/" || !NAMES[pathname]) return null;

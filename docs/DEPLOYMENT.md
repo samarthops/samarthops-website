@@ -38,7 +38,7 @@ Set in Cloudflare Pages > Settings > Variables and Secrets, for both **Productio
 ## Services outside this repository
 
 - **Turnstile:** create a widget for `samarthops.in` and the preview hostnames (`*.pages.dev`), then copy the two keys into the variables above.
-- **Brevo:** the sender `noreply@samarthops.in` is verified. Mailboxes are on Zoho (`support@samarthops.in`), so never change MX, SPF, DKIM, DMARC or other TXT records from this project.
+- **Brevo:** the sender `noreply@samarthops.in` is verified. Mailboxes are on Zoho (`support@samarthops.in` for the app, `enquiry@samarthops.in` for website enquiries), so never change MX, SPF, DKIM, DMARC or other TXT records from this project.
 - **Analytics:** Cloudflare Web Analytics (cookie-free, so no cookie banner). Enable it in the Pages project; it needs no code change.
 - **WhatsApp:** the number is set once in `src/config/site.ts` (`whatsappNumber`). While it is empty the floating button and WhatsApp links stay hidden.
 
@@ -65,7 +65,7 @@ After a production deploy:
 - `https://samarthops.in/sitemap.xml` and `/robots.txt` answer 200 and use the canonical origin.
 - Response headers on a page include CSP, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` and frame denial; HSTS is `max-age=86400` without `includeSubDomains` or `preload`.
 - The contact form delivers a mail to `CONTACT_TO_EMAIL`, and shows the WhatsApp fallback when delivery fails.
-- A test mail from another address reaches `support@samarthops.in`.
+- A test mail from another address reaches `enquiry@samarthops.in`.
 - Lighthouse on mobile for Home, HRMS and Contact: 90+ for performance, accessibility, best practices and SEO.
 
 ## DNS cut-over (owner present, only on the owner's explicit "go")
@@ -79,7 +79,7 @@ Only the apex and `www` records change. MX, TXT, `api.samarthops.in` and `review
    - `https://samarthops.in/`, `/privacy`, `/support`, `/delete-data` answer 200 with the expected text.
    - `https://www.samarthops.in/privacy` answers 301 to the apex.
    - `https://api.samarthops.in/` still answers as before.
-   - A test mail to `support@samarthops.in` arrives.
+   - A test mail to `enquiry@samarthops.in` arrives.
    - The contact form delivers.
 5. **Rollback:** restore the two records from the backup. The HRMS server keeps serving the old pages until its apex site block is removed.
 6. **Cleanup:** after a week without problems the HRMS repository (`samarthops/samarthops`) removes its apex site block and apex certificate renewal, in its own pull request.

@@ -75,7 +75,7 @@ test("contact form: honest disabled state when Turnstile is not configured", asy
   // The default test build has no site key, so the form must not pretend to work.
   if (await submit.isDisabled()) {
     await expect(page.getByText("The enquiry form is not available right now.")).toBeVisible();
-    await expect(page.getByRole("link", { name: /support@samarthops\.in/ }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /enquiry@samarthops.in/ }).first()).toBeVisible();
   }
 });
 

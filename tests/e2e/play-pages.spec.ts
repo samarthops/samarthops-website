@@ -33,7 +33,7 @@ for (const p of PAGES) {
       }
       const font = await page.locator("h1").evaluate((e) => getComputedStyle(e).fontFamily);
       expect(font).toMatch(/Inter/);
-      expect(await page.evaluate(() => document.fonts.check("16px Inter"))).toBe(true);
+      await expect.poll(() => page.evaluate(() => document.fonts.check("16px Inter"))).toBe(true);
     });
 
     test("has no horizontal scroll and no axe violations", async ({ page }) => {

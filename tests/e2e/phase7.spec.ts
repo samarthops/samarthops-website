@@ -13,13 +13,15 @@ const ROUTES = [
   "/portfolio/medicare-plus",
   "/portfolio/primeestate",
   "/portfolio/brightfuture",
+  "/portfolio/voltcare",
+  "/portfolio/torquetech",
   "/about",
   "/contact",
   "/website-privacy",
   "/terms",
 ];
 
-const DEMOS = ["foodnest", "shopease", "medicare-plus", "primeestate", "brightfuture"];
+const DEMOS = ["foodnest", "shopease", "medicare-plus", "primeestate", "brightfuture", "voltcare", "torquetech"];
 
 type JsonBlock = { "@type"?: string; [key: string]: unknown };
 

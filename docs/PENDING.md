@@ -3,11 +3,14 @@
 Open work that is not part of the current phase. Remove an item when it is done.
 
 ## Content and config
-- **Contact page email:** change the displayed address from `support@samarthops.in` to `enquiry@samarthops.in`.
-  - Where it shows today: `src/app/contact/page.tsx`, `src/components/forms/contact-form.tsx` (two places), all read `siteConfig.supportEmail` in `src/config/site.ts`.
-  - Decide first: footer, `/terms`, `/website-privacy` and the JSON-LD also use `supportEmail`. Add a separate `enquiryEmail` for the Contact page only, or change them all.
-  - Do not touch `public/privacy.html`, `public/support.html`, `public/delete-data.html` (Play-linked, keep `support@`).
-  - Update the assertion in `tests/e2e/phase2.spec.ts` (line ~78) to match.
+- **enquiry@ mailbox:** the website now shows `enquiry@samarthops.in` (footer, Contact, form, /terms, /website-privacy, JSON-LD; `siteConfig.enquiryEmail`). Confirm the mailbox exists in Zoho before the DNS cut-over.
+  - `public/privacy.html`, `public/support.html`, `public/delete-data.html` still show `support@`. They are Play-linked and come from the HRMS repository, so any change starts there.
+- **Audit items not done yet** (from the duplicate-content audit; each is a content decision):
+  - Closing CTA block ("Have an Idea?") repeats on home and every service page; "How we work" and the "why" proof repeat between /services and the service pages.
+  - The "What do you need from me to get started?" FAQ is identical on all four service pages (`startFaq` in `src/data/services.ts`).
+  - "Affordable" and "Technical support" are each said twice on /services/custom-software-development and the home page.
+  - `/products` has no page or redirect (MASTER_PLAN lists a redirect to `/products/hrms`).
+  - Service pages show a text breadcrumb without BreadcrumbList markup; the 404 page inherits the root canonical.
 - `siteConfig.whatsappNumber` is empty, so WhatsApp buttons are hidden until the owner fills it in.
 - Share image is the Play banner (temporary).
 - Home hero secondary CTA points to HRMS; no featured-work section until phases 4-6.

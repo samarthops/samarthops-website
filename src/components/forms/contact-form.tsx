@@ -149,8 +149,8 @@ export function ContactForm({
             "Please "
           )}
           email{" "}
-          <a href={`mailto:${siteConfig.supportEmail}`} className="font-semibold text-brand-dark underline">
-            {siteConfig.supportEmail}
+          <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-semibold text-brand-dark underline">
+            {siteConfig.enquiryEmail}
           </a>
           .
         </div>
@@ -314,8 +314,8 @@ export function ContactForm({
               </>
             )}
             email{" "}
-            <a href={`mailto:${siteConfig.supportEmail}`} className="font-semibold text-brand-dark underline">
-              {siteConfig.supportEmail}
+            <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-semibold text-brand-dark underline">
+              {siteConfig.enquiryEmail}
             </a>
             .
           </p>

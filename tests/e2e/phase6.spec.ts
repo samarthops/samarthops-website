@@ -57,10 +57,10 @@ test("home and sitemap link to the new demos", async ({ page, request }) => {
   for (const d of DEMOS) expect(xml).toContain(`https://samarthops.in${d.path}`);
 });
 
-test("portfolio: five cards, industry filters and links for the new demos", async ({ page }) => {
+test("portfolio: seven cards, industry filters and links for the new demos", async ({ page }) => {
   await page.goto("/portfolio");
   const cards = page.getByTestId("portfolio-cards").locator("> li");
-  await expect(cards).toHaveCount(5);
+  await expect(cards).toHaveCount(7);
 
   for (const [industry, name] of [
     ["Clinic", "MediCare Plus"],
@@ -72,7 +72,7 @@ test("portfolio: five cards, industry filters and links for the new demos", asyn
     await expect(cards.first()).toContainText(name);
   }
   await page.getByRole("button", { name: "All", exact: true }).click();
-  await expect(cards).toHaveCount(5);
+  await expect(cards).toHaveCount(7);
 
   await page.getByRole("link", { name: "View demo: PrimeEstate" }).click();
   await expect(page).toHaveURL(/\/portfolio\/primeestate$/);
