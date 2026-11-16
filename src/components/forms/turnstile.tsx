@@ -56,21 +56,40 @@ export function Turnstile({
 
   useEffect(() => {
     let cancelled = false;
-    loadScript()
-      .then(() => {
-        if (cancelled || !box.current || !window.turnstile) return;
-        widgetId.current = window.turnstile.render(box.current, {
-          sitekey: siteKey,
-          callback: (token) => handlers.current.onToken(token),
-          "expired-callback": () => handlers.current.onToken(""),
-          "error-callback": () => handlers.current.onToken(""),
+    let started = false;
+    const form = box.current?.closest("form") ?? null;
+
+    // The third-party script is loaded on first contact with the form, or after a
+    // short delay, so it never competes with the first paint.
+    const start = () => {
+      if (started || cancelled) return;
+      started = true;
+      form?.removeEventListener("focusin", start);
+      form?.removeEventListener("pointerdown", start);
+      window.clearTimeout(timer);
+      loadScript()
+        .then(() => {
+          if (cancelled || !box.current || !window.turnstile) return;
+          widgetId.current = window.turnstile.render(box.current, {
+            sitekey: siteKey,
+            callback: (token) => handlers.current.onToken(token),
+            "expired-callback": () => handlers.current.onToken(""),
+            "error-callback": () => handlers.current.onToken(""),
+          });
+        })
+        .catch(() => {
+          if (!cancelled) handlers.current.onUnavailable();
         });
-      })
-      .catch(() => {
-        if (!cancelled) handlers.current.onUnavailable();
-      });
+    };
+    const timer = window.setTimeout(start, 3000);
+    form?.addEventListener("focusin", start);
+    form?.addEventListener("pointerdown", start);
+
     return () => {
       cancelled = true;
+      window.clearTimeout(timer);
+      form?.removeEventListener("focusin", start);
+      form?.removeEventListener("pointerdown", start);
       if (widgetId.current && window.turnstile) window.turnstile.remove(widgetId.current);
       widgetId.current = undefined;
     };

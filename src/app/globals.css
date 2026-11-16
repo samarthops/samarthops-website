@@ -100,3 +100,15 @@
     }
   }
 }
+
+/* Reveal-on-scroll (see src/components/common/reveal.tsx). Hidden only after JS
+   marks the page as ready, so content is never invisible without JS. */
+html.reveal-ready [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+html.reveal-ready [data-reveal] {
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
+}
