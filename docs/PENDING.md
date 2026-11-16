@@ -3,8 +3,7 @@
 Open work that is not part of the current phase. Remove an item when it is done.
 
 ## Content and config
-- **enquiry@ mailbox:** the website now shows `enquiry@samarthops.in` (footer, Contact, form, /terms, /website-privacy, JSON-LD; `siteConfig.enquiryEmail`). Confirm the mailbox exists in Zoho before the DNS cut-over.
-  - `public/privacy.html`, `public/support.html`, `public/delete-data.html` still show `support@`. They are Play-linked and come from the HRMS repository, so any change starts there.
+- **Play pages keep `support@`:** `public/privacy.html`, `public/support.html` and `public/delete-data.html` come from the HRMS repository, so the owner accepted them as they are (17 Nov 2026). The `enquiry@` mailbox exists in Zoho (confirmed by the owner, 17 Nov 2026).
 - **Audit items not done yet** (from the duplicate-content audit; each is a content decision):
   - Closing CTA block ("Have an Idea?") repeats on home and every service page; "How we work" and the "why" proof repeat between /services and the service pages.
   - The "What do you need from me to get started?" FAQ is identical on all four service pages (`startFaq` in `src/data/services.ts`).
