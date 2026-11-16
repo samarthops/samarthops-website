@@ -121,7 +121,7 @@ export default function HomePage() {
         title="See what we can build"
         intro="Concept demos you can try right now, each with its own design."
       >
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {demoProjects.map((d) => (
             <li key={d.slug} className="rounded-xl border border-line bg-white p-5">
               <p className="text-xs font-semibold tracking-wide text-brand-dark uppercase">{d.industry}</p>

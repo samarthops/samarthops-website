@@ -49,7 +49,7 @@ test("site navigation, footer, home and sitemap link to the portfolio", async ({
 test("portfolio: cards, industry filter and links", async ({ page }) => {
   await page.goto("/portfolio");
   const cards = page.getByTestId("portfolio-cards").locator("> li");
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(5);
 
   await page.getByRole("button", { name: "Restaurant" }).click();
   await expect(cards).toHaveCount(1);
@@ -60,7 +60,7 @@ test("portfolio: cards, industry filter and links", async ({ page }) => {
   await expect(cards.first()).toContainText("ShopEase");
 
   await page.getByRole("button", { name: "All" }).click();
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(5);
 
   await page.getByRole("link", { name: /View demo: FoodNest/ }).click();
   await expect(page).toHaveURL(/\/portfolio\/foodnest$/);

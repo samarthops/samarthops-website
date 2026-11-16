@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Portfolio: concept demos",
   description:
-    "Concept demonstrations by Samarth Ops: a food ordering site and an online store you can try, built to show our design and development work.",
+    "Concept demonstrations by Samarth Ops: five working examples you can try: food ordering, an online store, a clinic, real estate and a school, built to show our design and development work.",
   path: "/portfolio",
 });
 
