@@ -19,8 +19,8 @@ export function Footer() {
         <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}, Pune.{" "}
-            <a href={`mailto:${siteConfig.enquiryEmail}`} className="underline hover:text-brand-dark">
-              {siteConfig.enquiryEmail}
+            <a href={`mailto:${siteConfig.supportEmail}`} className="underline hover:text-brand-dark">
+              {siteConfig.supportEmail}
             </a>
           </p>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-5 gap-y-0 md:flex-nowrap md:whitespace-nowrap">
