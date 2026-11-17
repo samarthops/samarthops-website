@@ -141,7 +141,7 @@ export function TorqueTechApp() {
               ["#tt-process", "How we work"],
               ["#tt-quote", `Quote request (${items.length})`],
             ].map(([href, label]) => (
-              <a key={href} href={href} className="rounded-md px-3 py-2 hover:bg-white/15">
+              <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-md px-3 py-2 hover:bg-white/15">
                 {label}
               </a>
             ))}
@@ -150,7 +150,7 @@ export function TorqueTechApp() {
       </header>
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 py-10 sm:px-6">
-        <section aria-labelledby="tt-title" className="rounded-lg bg-[#1F2933] p-6 text-white sm:p-10">
+        <section aria-labelledby="tt-title" className="relative overflow-hidden rounded-lg bg-[#1F2933] p-6 text-white sm:p-10">
           <h1 id="tt-title" className={`${head} max-w-3xl text-4xl font-semibold tracking-wide uppercase sm:text-6xl`}>
             Precision parts, made to your drawing
           </h1>
@@ -160,6 +160,7 @@ export function TorqueTechApp() {
           <a href="#tt-parts" className={`${orangeBtn} mt-6`}>
             Browse parts
           </a>
+          <Cog aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute top-1/2 -right-8 hidden size-80 -translate-y-1/2 text-[#F97316]/20 lg:block" />
         </section>
 
         <section id="tt-parts" aria-labelledby="tt-parts-title" className="scroll-mt-4">

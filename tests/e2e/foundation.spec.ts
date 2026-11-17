@@ -64,9 +64,9 @@ test("no /privacy-policy and no .html URL in the navigation", async ({ page }) =
   await expect(page.locator('a[href*="privacy-policy"], a[href$=".html"]')).toHaveCount(0);
 });
 
-test("WhatsApp button is hidden while no number is configured", async ({ page }) => {
+test("WhatsApp button shows once a number is configured", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByTestId("whatsapp-button")).toHaveCount(0);
+  await expect(page.getByTestId("whatsapp-button")).toBeVisible();
 });
 
 test("mobile menu opens", async ({ page, isMobile }) => {

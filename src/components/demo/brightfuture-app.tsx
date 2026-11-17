@@ -99,7 +99,7 @@ export function BrightFutureApp() {
               ["#bf-news", "Events"],
               ["#bf-gallery", "Gallery"],
             ].map(([href, label]) => (
-              <a key={href} href={href} className="rounded-xl px-3 py-2 hover:bg-white/15">
+              <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-xl px-3 py-2 hover:bg-white/15">
                 {label}
               </a>
             ))}
@@ -108,7 +108,7 @@ export function BrightFutureApp() {
       </header>
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 py-10 sm:px-6">
-        <section aria-labelledby="bf-title" className="rounded-[2rem] bg-[#FACC15] p-6 sm:p-10">
+        <section aria-labelledby="bf-title" className="relative overflow-hidden rounded-[2rem] bg-[#FACC15] p-6 sm:p-10">
           <h1 id="bf-title" className={`${head} max-w-2xl text-4xl font-semibold text-[#3B0764] sm:text-6xl`}>
             Where every child learns to shine
           </h1>
@@ -118,6 +118,7 @@ export function BrightFutureApp() {
           <a href="#bf-admissions" className="mt-5 inline-flex rounded-2xl bg-[#5B21B6] px-6 py-3 font-extrabold text-white hover:bg-[#4C1D95]">
             Admissions are open
           </a>
+          <GraduationCap aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute top-1/2 -right-6 hidden size-80 -translate-y-1/2 text-black/10 lg:block" />
         </section>
 
         <section id="bf-courses" aria-labelledby="bf-courses-title" className="scroll-mt-4">

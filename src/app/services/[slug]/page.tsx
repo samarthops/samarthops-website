@@ -48,7 +48,7 @@ export default async function ServicePageRoute({ params }: { params: Promise<{ s
       <section className="bg-gradient-to-b from-[#EAF3FF] to-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <nav aria-label="Breadcrumb" className="mb-4 text-sm text-ink">
-            <Link href="/services" className="underline">
+            <Link href="/services" className="inline-block py-2 underline">
               Services
             </Link>{" "}
             / {page.title}
@@ -131,7 +131,7 @@ export default async function ServicePageRoute({ params }: { params: Promise<{ s
         <div className="max-w-3xl divide-y divide-line rounded-xl border border-line">
           {page.faqs.map((f) => (
             <details key={f.q} className="group p-4">
-              <summary className="cursor-pointer font-medium text-navy">{f.q}</summary>
+              <summary className="min-h-11 cursor-pointer py-2 font-medium text-navy">{f.q}</summary>
               <p className="mt-2 text-ink">{f.a}</p>
             </details>
           ))}
@@ -139,25 +139,17 @@ export default async function ServicePageRoute({ params }: { params: Promise<{ s
       </Section>
 
       <Section tone="soft">
-        <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">Have an idea? Let&apos;s build it together.</h2>
-          <p className="mt-3 text-ink">Tell us what you need and we will get back to you.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild size="xl">
-              <Link href={contactHref}>Send an enquiry</Link>
-            </Button>
-            {wa && (
-              <Button asChild size="xl" variant="outline">
-                <a href={wa} rel="noopener noreferrer">
-                  <MessageCircle className="size-4" aria-hidden="true" /> Chat on WhatsApp
-                </a>
-              </Button>
-            )}
-            <Button asChild size="xl" variant="outline">
-              <Link href="/services">All services</Link>
-            </Button>
-          </div>
-        </div>
+        <p className="text-ink">
+          Not sure this is the right fit?{" "}
+          <Link href={contactHref} className="inline-block py-2 font-medium text-brand-dark underline">
+            Send an enquiry
+          </Link>{" "}
+          or{" "}
+          <Link href="/services" className="inline-block py-2 font-medium text-brand-dark underline">
+            see all services
+          </Link>
+          .
+        </p>
       </Section>
     </>
   );

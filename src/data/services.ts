@@ -25,11 +25,6 @@ export type ServicePage = {
   proof?: { text: string; href: string; label: string };
 };
 
-const startFaq = {
-  q: "What do you need from me to get started?",
-  a: "Send us an enquiry or message us on WhatsApp and describe what you need. We will take it from there.",
-};
-
 export const servicePages: ServicePage[] = [
   {
     slug: "android-app-development",
@@ -75,7 +70,7 @@ export const servicePages: ServicePage[] = [
         q: "Do you support the app after launch?",
         a: "Yes. We offer maintenance and technical support after launch.",
       },
-      startFaq,
+      { q: "What do you need from me to get started?", a: "Tell us what the app should do and who will use it. Rough notes, or examples of apps you like, are enough to start." },
     ],
     proof: {
       text: "Our own product, SamarthOps HRMS, is an employee and attendance app for Android, built by us.",
@@ -127,7 +122,7 @@ export const servicePages: ServicePage[] = [
         q: "Can you redesign my existing website?",
         a: "Yes. Share your current site and what you want to improve.",
       },
-      startFaq,
+      { q: "What do you need from me to get started?", a: "Your business name, what you offer, and any content or logo you already have. Send what you have and we will ask for the rest as we go." },
     ],
   },
   {
@@ -174,7 +169,7 @@ export const servicePages: ServicePage[] = [
         q: "Will the store work on phones?",
         a: "Yes. We design stores mobile first.",
       },
-      startFaq,
+      { q: "What do you need from me to get started?", a: "A list of the products you want to sell and how you want customers to pay. Rough details are fine to start." },
     ],
   },
   {
@@ -200,7 +195,7 @@ export const servicePages: ServicePage[] = [
       { title: "Reporting dashboards", text: "See the numbers you need without building reports by hand." },
       { title: "Database-driven applications", text: "Applications built on well-organised data that can grow with you." },
       { title: "Scalable foundations", text: "Built so you can add users and features later." },
-      { title: "Support", text: "Technical support after launch." },
+      { title: "Support", text: "Fixes and updates after launch." },
     ],
     useCases: [
       "Replacing spreadsheets with a management system",
@@ -219,9 +214,9 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "Do you offer support after delivery?",
-        a: "Yes. Technical support is available after launch.",
+        a: "Yes. We stay available for fixes and questions after launch.",
       },
-      startFaq,
+      { q: "What do you need from me to get started?", a: "Describe the work you want to speed up and how it is done today (for example spreadsheets, paper or an old tool)." },
     ],
   },
 ];

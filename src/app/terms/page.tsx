@@ -23,7 +23,7 @@ export default function TermsPage() {
       <p>
         Please give accurate details when you send an enquiry. Sending an enquiry does not create an obligation for
         either side. See the{" "}
-        <a href="/website-privacy" className="font-medium text-brand-dark underline">
+        <a href="/website-privacy" className="inline-block py-2 font-medium text-brand-dark underline">
           website privacy notice
         </a>{" "}
         for how your details are handled.
@@ -56,7 +56,7 @@ export default function TermsPage() {
       <h2>Changes and contact</h2>
       <p>
         We may update these terms; the version on this page applies. Questions:{" "}
-        <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-medium text-brand-dark underline">
+        <a href={`mailto:${siteConfig.enquiryEmail}`} className="inline-block py-2 font-medium text-brand-dark underline">
           {siteConfig.enquiryEmail}
         </a>
         .

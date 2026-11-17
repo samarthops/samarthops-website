@@ -89,7 +89,7 @@ export function MediCareApp() {
               ["#mc-doctors", "Doctors"],
               ["#mc-enquiry", "Book a visit"],
             ].map(([href, label]) => (
-              <a key={href} href={href} className="rounded-full px-3 py-2 text-[#134E4A] hover:bg-[#CCFBF1]">
+              <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-full px-3 py-2 text-[#134E4A] hover:bg-[#CCFBF1]">
                 {label}
               </a>
             ))}
