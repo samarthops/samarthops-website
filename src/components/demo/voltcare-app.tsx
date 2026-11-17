@@ -345,7 +345,7 @@ export function VoltCareApp() {
       </div>
 
       <footer className="bg-[#0A0A0A] text-white/90">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-8 text-xs sm:text-sm sm:px-6">
           <p className={`${head} flex items-center gap-2 text-2xl font-bold text-[#A3E635]`}>
             <Zap className="size-6" aria-hidden="true" /> VoltCare Services
           </p>

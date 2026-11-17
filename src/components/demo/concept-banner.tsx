@@ -6,7 +6,7 @@ import { conceptLabel, similarHref, type DemoProject } from "@/data/portfolio";
 export function ConceptBanner({ demo }: { demo: DemoProject }) {
   return (
     <div className="bg-navy text-white">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-3 text-sm sm:px-6">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-2 text-xs leading-snug sm:py-3 sm:text-sm sm:px-6">
         <p data-testid="concept-label" className="max-w-3xl">
           {conceptLabel}
         </p>

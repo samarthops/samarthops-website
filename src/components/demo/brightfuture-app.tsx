@@ -318,7 +318,7 @@ export function BrightFutureApp() {
       </div>
 
       <footer className="bg-[#2E1065] text-white/90">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-8 text-xs sm:text-sm sm:px-6">
           <p className={`${head} flex items-center gap-2 text-2xl text-[#FACC15]`}>
             <GraduationCap className="size-6" aria-hidden="true" /> BrightFuture Academy
           </p>

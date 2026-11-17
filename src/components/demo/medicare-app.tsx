@@ -98,8 +98,9 @@ export function MediCareApp() {
       </header>
 
       <div className="mx-auto max-w-6xl space-y-14 px-4 py-10 sm:px-6">
-        <section aria-labelledby="mc-title" className="grid items-center gap-6 rounded-3xl bg-[#0F766E] p-6 text-white sm:p-10 md:grid-cols-[1.4fr_1fr]">
-          <div>
+        <section aria-labelledby="mc-title" className="relative grid items-center gap-6 overflow-hidden rounded-3xl bg-[#0F766E] p-6 text-white sm:p-10 md:grid-cols-[1.4fr_1fr]">
+          <HeartPulse aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute -bottom-10 left-1/2 hidden size-64 text-white/10 lg:block" />
+          <div className="relative">
             <h1 id="mc-title" className={`${body} text-3xl font-extrabold sm:text-5xl`}>
               Caring for the whole family, under one roof
             </h1>
@@ -110,7 +111,7 @@ export function MediCareApp() {
               Find a doctor
             </a>
           </div>
-          <ul className="grid grid-cols-3 gap-3 text-center text-sm" aria-label="Clinic at a glance">
+          <ul className="relative grid grid-cols-3 gap-3 text-center text-sm" aria-label="Clinic at a glance">
             {[
               [String(departments.length), "Departments"],
               [String(doctors.length), "Doctors"],
@@ -263,7 +264,7 @@ export function MediCareApp() {
       </div>
 
       <footer className="bg-[#134E4A] text-white/90">
-        <div className="mx-auto max-w-6xl px-4 py-6 text-sm sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-6 text-xs sm:text-sm sm:px-6">
           <p className={`${body} flex items-center gap-2 text-lg font-extrabold text-white`}>
             <HeartPulse className="size-5" aria-hidden="true" /> MediCare Plus
           </p>
