@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { pageMetadata } from "@/lib/seo";
@@ -65,17 +64,6 @@ export default function SupportPage() {
           </details>
         ))}
       </div>
-      <p>
-        Your data: see{" "}
-        <Link href="/delete-data" className={link}>
-          Delete my data
-        </Link>{" "}
-        and the{" "}
-        <Link href="/privacy" className={link}>
-          privacy notice
-        </Link>
-        .
-      </p>
     </article>
   );
 }

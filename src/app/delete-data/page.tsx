@@ -56,13 +56,6 @@ export default function DeleteDataPage() {
         We reply within 24 working hours. We may ask you to confirm who you are
         before we act. Never send passwords, PINs or sign-in codes.
       </p>
-      <p>
-        Need help with something else? See{" "}
-        <Link href="/support" className={link}>
-          Support
-        </Link>
-        .
-      </p>
     </article>
   );
 }
