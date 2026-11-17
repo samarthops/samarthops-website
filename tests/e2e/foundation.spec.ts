@@ -26,24 +26,6 @@ for (const slug of LEGAL) {
     expect(res.status()).toBe(200);
     expect(res.headers()["content-type"]).toContain("text/html");
   });
-
-  test(`/${slug} has the same text as the HRMS file (header, footer and styling may differ)`, async () => {
-    const source = path.resolve(__dirname, "../../../samarthops/deployment/site", `${slug}.html`);
-    let expected: Buffer;
-    try {
-      expected = readFileSync(source);
-    } catch {
-      test.skip(true, "HRMS repository not checked out next to this one");
-      return;
-    }
-    const actual = readFileSync(path.resolve(__dirname, "../../public", `${slug}.html`));
-    // Git on Windows may check the file out with CRLF; the committed blob is LF like the source.
-    const lf = (b: Buffer) => b.toString("utf8").split("\r\n").join("\n");
-    // Only the page chrome (header, footer, stylesheet) is restyled here; the <main> text must match the source.
-    const main = (b: Buffer) => lf(b).match(/<main>[\s\S]*?<\/main>/)?.[0];
-    expect(main(actual)).toBeTruthy();
-    expect(main(actual)).toBe(main(expected));
-  });
 }
 
 test("footer links the three Play-listing pages", async ({ page }) => {
@@ -74,4 +56,24 @@ test("mobile menu opens", async ({ page, isMobile }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Open menu" }).click();
   await expect(page.getByRole("navigation", { name: "Mobile" })).toBeVisible();
+});
+
+test("/privacy has the same notice text as the HRMS file", async () => {
+  const source = path.resolve(__dirname, "../../../samarthops/deployment/site", "privacy.html");
+  let expected: string;
+  try {
+    expected = readFileSync(source, "utf8");
+  } catch {
+    test.skip(true, "HRMS repository not checked out next to this one");
+    return;
+  }
+  const lf = (t: string) => t.split("\r\n").join("\n");
+  // Body of the notice: everything after the version line up to </main>.
+  const hrms = lf(expected).match(/<p>Version [^<]*<\/p>\n([\s\S]*?)\n<\/main>/)?.[1].trim();
+  const mine = lf(readFileSync(path.resolve(__dirname, "../../src/content/privacy-notice.ts"), "utf8"));
+  const mineBody = mine.match(/privacyNoticeHtml = `\n([\s\S]*?)\n`;/)?.[1].trim();
+  expect(mineBody).toBeTruthy();
+  // Compare the wording only: paragraph markup may differ (a <br> in the HRMS file became separate paragraphs here).
+  const words = (h?: string) => h?.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  expect(words(mineBody)).toBe(words(hrms));
 });

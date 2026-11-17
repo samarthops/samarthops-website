@@ -1,11 +1,12 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy notice - SamarthOps</title><link rel="stylesheet" href="/style.css?v=20261117b"></head>
-<body><header class="site-header"><div class="bar"><a class="brand" href="/"><img src="/images/branding/Samarth-Ops-symbol.svg" alt="" width="36" height="36"><span>Samarth Ops</span></a>
-<nav aria-label="Main"><a href="/">Home</a><a href="/services">Services</a><a href="/products/hrms">SamarthOps HRMS</a><a href="/portfolio">Portfolio</a><a href="/about">About</a><a href="/contact">Contact</a></nav></div></header>
-<main>
-<h1>Privacy notice</h1>
-<p>Version 1.5.</p>
+/**
+ * App privacy notice, copied verbatim from the HRMS repository
+ * (deployment/site/privacy.html, rendered from backend/app/content/privacy_notice.md).
+ * Never reword here. When the notice version changes there, paste the new body
+ * (everything between <h1> and </main>, without the version line) and update the version.
+ */
+export const privacyNoticeVersion = "1.5";
+
+export const privacyNoticeHtml = `
 <h2>What we collect</h2>
 <p>SamarthOps records your <strong>location at the moment you tap Check in and the moment you tap Check out</strong>: latitude, longitude, how accurate the reading is, and the time. It also keeps your name, employee ID and mobile number and e-mail address (the e-mail address is used to send your sign-in code), plus technical details of your phone that are needed for security: the device model, operating system, app version and an identifier that links your account to one phone.</p>
 <p>If your employer switches it on, SamarthOps also asks you to take a <strong>selfie</strong> (a photo of your face) when you tap Check in and Check out. The photo is used only as proof of attendance. We do not compare it with other photos and we do not match faces.</p>
@@ -34,7 +35,4 @@
 <p>For any question, request or complaint about your data, contact <a href="mailto:support@samarthops.in">support@samarthops.in</a>.</p>
 <h2>Changes to this notice</h2>
 <p>If this notice changes in a way that matters, SamarthOps will show you the new version and ask you to agree again before your next check-in. Every version you agree to is recorded with the date, the time and your device.</p>
-</main>
-<footer class="site-footer"><div class="bar"><p>&copy; Samarth Ops, Pune. <a href="mailto:support@samarthops.in">support@samarthops.in</a></p>
-<nav aria-label="Footer"><a href="/privacy">Privacy notice</a><a href="/support">Support</a><a href="/delete-data">Delete my data</a><a href="/website-privacy">Website privacy</a><a href="/terms">Terms</a></nav></div></footer>
-</body></html>
+`;

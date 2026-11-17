@@ -1,4 +1,4 @@
-export type NavItem = { label: string; href: string; /** Static HTML file outside the Next router (plain anchor). */ static?: boolean };
+export type NavItem = { label: string; href: string };
 
 /** Header navigation. Entries are added as each page ships (no dead links). */
 export const mainNav: NavItem[] = [
@@ -10,11 +10,11 @@ export const mainNav: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-/** Footer legal links. The first three are the Play-linked static pages (see public/). */
+/** Footer legal links. The first three are the Play-linked app pages. */
 export const legalNav: NavItem[] = [
-  { label: "Privacy notice", href: "/privacy", static: true },
-  { label: "Support", href: "/support", static: true },
-  { label: "Delete my data", href: "/delete-data", static: true },
+  { label: "Privacy notice", href: "/privacy" },
+  { label: "Support", href: "/support" },
+  { label: "Delete my data", href: "/delete-data" },
   { label: "Website privacy", href: "/website-privacy" },
   { label: "Terms", href: "/terms" },
 ];
