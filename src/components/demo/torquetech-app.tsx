@@ -350,7 +350,7 @@ export function TorqueTechApp() {
       </div>
 
       <footer className="bg-[#1F2933] text-white/90">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-8 text-xs sm:text-sm sm:px-6">
           <p className={`${head} flex items-center gap-2 text-2xl font-semibold tracking-wide text-[#FB923C] uppercase`}>
             <Cog className="size-6" aria-hidden="true" /> TorqueTech Components
           </p>

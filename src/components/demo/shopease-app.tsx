@@ -17,6 +17,7 @@ import {
   Shirt,
   ShoppingCart,
   Speaker,
+  ShoppingBag,
   Store,
   Trash,
   Wallet,
@@ -176,7 +177,8 @@ export function ShopEaseApp() {
 
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         {view === "shop" && (
-          <section aria-labelledby="se-shop-title">
+          <section aria-labelledby="se-shop-title" className="relative">
+            <ShoppingBag aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute top-0 right-0 hidden size-28 text-[#F59E0B]/25 lg:block" />
             <h1 id="se-shop-title" className={`${head} text-3xl font-extrabold sm:text-4xl`}>
               Everyday essentials, easy to find
             </h1>
@@ -453,7 +455,7 @@ export function ShopEaseApp() {
       </div>
 
       <footer className="bg-[#111827] text-white/90">
-        <div className="mx-auto max-w-6xl px-4 py-6 text-sm sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-6 text-xs sm:text-sm sm:px-6">
           <p className={`${head} text-lg font-extrabold text-white`}>ShopEase</p>
           <p className="mt-1">{conceptLabel}</p>
           <p className="mt-1">All products, prices and details are fictional.</p>

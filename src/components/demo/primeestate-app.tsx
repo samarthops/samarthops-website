@@ -109,7 +109,8 @@ export function PrimeEstateApp() {
 
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         {view === "browse" && (
-          <section aria-labelledby="pe-title">
+          <section aria-labelledby="pe-title" className="relative">
+            <Building2 aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute top-0 right-0 hidden size-28 text-[#C9A227]/30 lg:block" />
             <h1 id="pe-title" className={`${serif} text-4xl font-semibold sm:text-5xl`}>
               Find a home worth coming back to
             </h1>
@@ -208,7 +209,7 @@ export function PrimeEstateApp() {
       </div>
 
       <footer className="bg-[#14213D] text-white/90">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-8 text-xs sm:text-sm sm:px-6">
           <p className={`${serif} text-2xl font-semibold text-[#C9A227]`}>PrimeEstate</p>
           <p className="mt-2">{conceptLabel}</p>
           <p className="mt-1">All listings, localities, prices and details are fictional. Nothing on this page is an offer.</p>

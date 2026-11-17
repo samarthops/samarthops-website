@@ -123,8 +123,9 @@ export function FoodNestApp() {
         </div>
       </header>
 
-      <section className="bg-[#FDE7D3]">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <section className="relative overflow-hidden bg-[#FDE7D3]">
+        <CookingPot aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute top-1/2 right-8 hidden size-56 -translate-y-1/2 text-[#B83B0B]/15 lg:block" />
+        <div className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
           <h1 className={`${head} max-w-2xl text-4xl font-bold text-[#7A2E0E] sm:text-5xl`}>
             Home-style food, ordered in a few taps
           </h1>
@@ -284,7 +285,7 @@ export function FoodNestApp() {
       )}
 
       <footer className="border-t border-[#EAD7C3] bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-[#5C4030] sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:py-6 text-xs sm:text-sm text-[#5C4030] sm:px-6">
           <p className={`${head} text-lg font-bold text-[#B83B0B]`}>FoodNest</p>
           <p className="mt-1">{conceptLabel}</p>
           <p className="mt-1">All dishes, prices and details are fictional.</p>
