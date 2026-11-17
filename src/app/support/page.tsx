@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AppPagesNav } from "@/components/common/app-pages-nav";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/config/site";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -22,7 +21,6 @@ export default function SupportPage() {
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20 [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-navy [&_p]:mt-3 [&_p]:text-ink [&_li]:mt-2 [&_li]:text-ink [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-5">
-      <AppPagesNav current="/support" />
       <h1 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
         Support
       </h1>

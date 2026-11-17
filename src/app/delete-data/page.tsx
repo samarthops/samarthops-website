@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AppPagesNav } from "@/components/common/app-pages-nav";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/config/site";
 
@@ -15,7 +14,6 @@ const link = "inline-block py-2 font-medium text-brand-dark underline";
 export default function DeleteDataPage() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20 [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-navy [&_p]:mt-3 [&_p]:text-ink [&_li]:mt-2 [&_li]:text-ink [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-5">
-      <AppPagesNav current="/delete-data" />
       <h1 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
         Delete my data
       </h1>

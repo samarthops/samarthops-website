@@ -1,4 +1,3 @@
-import { AppPagesNav } from "@/components/common/app-pages-nav";
 import { pageMetadata } from "@/lib/seo";
 import {
   privacyNoticeHtml,
@@ -15,7 +14,6 @@ export const metadata = pageMetadata({
 export default function PrivacyPage() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-      <AppPagesNav current="/privacy" />
       <h1 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
         Privacy notice
       </h1>

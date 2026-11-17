@@ -22,7 +22,7 @@ for (const p of PAGES) {
       expect(await res.text()).toContain(p.text);
     });
 
-    test("uses the site header, footer and shared app-pages navigation", async ({
+    test("uses the site header and footer", async ({
       page,
     }) => {
       await page.goto(p.path);
@@ -40,11 +40,6 @@ for (const p of PAGES) {
           footer.getByRole("link", { name, exact: true }),
         ).toBeVisible();
       }
-      const nav = page.getByRole("navigation", { name: "App help and legal" });
-      await expect(nav.getByText(p.h1, { exact: true })).toHaveAttribute(
-        "aria-current",
-        "page",
-      );
     });
 
     test("has no horizontal scroll and no axe violations", async ({ page }) => {
