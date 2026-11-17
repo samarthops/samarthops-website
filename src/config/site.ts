@@ -15,6 +15,6 @@ export const siteConfig = {
    * no "+", no spaces). OWNER: fill this in yourself. While it is empty the
    * floating button and every WhatsApp link stay hidden, so no broken link ships.
    */
-  whatsappNumber: "",
+  whatsappNumber: "919272328055",
   whatsappGreeting: "Hello Samarth Ops, I would like to know more.",
 } as const;

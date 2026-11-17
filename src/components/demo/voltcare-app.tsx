@@ -100,7 +100,7 @@ export function VoltCareApp() {
               ["#vc-track", "Track a ticket"],
               ["#vc-why", "Why VoltCare"],
             ].map(([href, label]) => (
-              <a key={href} href={href} className="rounded-lg px-3 py-2 hover:bg-white/15">
+              <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-lg px-3 py-2 hover:bg-white/15">
                 {label}
               </a>
             ))}
@@ -109,7 +109,7 @@ export function VoltCareApp() {
       </header>
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 py-10 sm:px-6">
-        <section aria-labelledby="vc-title" className="rounded-2xl bg-[#0A0A0A] p-6 text-white sm:p-10">
+        <section aria-labelledby="vc-title" className="relative overflow-hidden rounded-2xl bg-[#0A0A0A] p-6 text-white sm:p-10">
           <h1 id="vc-title" className={`${head} max-w-3xl text-4xl font-bold sm:text-6xl`}>
             Electrical and electronics repair, <span className="text-[#A3E635]">at your door</span>
           </h1>
@@ -124,6 +124,7 @@ export function VoltCareApp() {
               Track a ticket
             </a>
           </div>
+          <Zap aria-hidden="true" strokeWidth={1} className="pointer-events-none absolute top-1/2 -right-4 hidden size-80 -translate-y-1/2 text-[#A3E635]/20 lg:block" />
         </section>
 
         <section id="vc-services" aria-labelledby="vc-services-title" className="scroll-mt-4">

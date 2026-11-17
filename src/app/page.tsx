@@ -23,7 +23,7 @@ const strip = [
   { big: "8+", small: "years of experience" },
   { big: "100+", small: "customised Android apps and websites" },
   { big: "Business", small: "focused development" },
-  { big: "Affordable", small: "solutions" },
+  { big: "Pune", small: "based software firm" },
 ];
 
 export default function HomePage() {

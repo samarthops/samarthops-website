@@ -112,10 +112,10 @@ export function FoodNestApp() {
             <ChefHat className="size-7" aria-hidden="true" /> FoodNest
           </p>
           <nav aria-label="FoodNest" className="flex items-center gap-5 text-sm font-bold">
-            <a href="#fn-menu" className="hover:underline">
+            <a href="#fn-menu" className="inline-flex min-h-11 items-center hover:underline">
               Menu
             </a>
-            <a href="#fn-cart" className="inline-flex items-center gap-1.5 hover:underline">
+            <a href="#fn-cart" className="inline-flex min-h-11 items-center gap-1.5 hover:underline">
               <ShoppingBag className="size-4" aria-hidden="true" />
               Your order <span data-testid="fn-count">({count})</span>
             </a>

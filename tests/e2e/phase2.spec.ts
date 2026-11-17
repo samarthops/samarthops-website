@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { siteConfig } from "../../src/config/site";
 
 const PAGES = [
   { path: "/", h1: /Transform Your Business Ideas/ },
@@ -134,7 +135,7 @@ test("legal links are in the footer of every launch page", async ({ page }) => {
 test("no phone-number-like strings leak into pages", async ({ page }) => {
   for (const p of PAGES) {
     await page.goto(p.path);
-    const html = await page.content();
+    const html = (await page.content()).split(siteConfig.whatsappNumber).join("");
     expect(html, p.path).not.toMatch(/wa\.me\/\d|tel:\+?\d|\+91[\s-]?\d{5}/);
   }
 });

@@ -140,7 +140,7 @@ export function ContactForm({
           {waLink ? (
             <>
               Please{" "}
-              <a href={waLink} className="font-semibold text-brand-dark underline" rel="noopener noreferrer">
+              <a href={waLink} className="inline-block py-2 font-semibold text-brand-dark underline" rel="noopener noreferrer">
                 message us on WhatsApp
               </a>{" "}
               or{" "}
@@ -149,7 +149,7 @@ export function ContactForm({
             "Please "
           )}
           email{" "}
-          <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-semibold text-brand-dark underline">
+          <a href={`mailto:${siteConfig.enquiryEmail}`} className="inline-block py-2 font-semibold text-brand-dark underline">
             {siteConfig.enquiryEmail}
           </a>
           .
@@ -269,7 +269,7 @@ export function ContactForm({
             />
             <span>
               I agree that Samarth Ops may use these details to reply to my enquiry, as described in the{" "}
-              <Link href="/website-privacy" className="font-medium text-brand-dark underline">
+              <Link href="/website-privacy" className="inline-block py-2 font-medium text-brand-dark underline">
                 website privacy notice
               </Link>
               .
@@ -307,14 +307,14 @@ export function ContactForm({
             {waLink && (
               <>
                 You can also{" "}
-                <a href={waLink} className="font-semibold text-brand-dark underline" rel="noopener noreferrer">
+                <a href={waLink} className="inline-block py-2 font-semibold text-brand-dark underline" rel="noopener noreferrer">
                   message us on WhatsApp
                 </a>{" "}
                 or{" "}
               </>
             )}
             email{" "}
-            <a href={`mailto:${siteConfig.enquiryEmail}`} className="font-semibold text-brand-dark underline">
+            <a href={`mailto:${siteConfig.enquiryEmail}`} className="inline-block py-2 font-semibold text-brand-dark underline">
               {siteConfig.enquiryEmail}
             </a>
             .
