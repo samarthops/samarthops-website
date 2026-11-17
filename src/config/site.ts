@@ -9,6 +9,7 @@ export const siteConfig = {
   description:
     "Samarth Ops is a software development firm in Pune building custom Android apps, websites and business software, and the SamarthOps HRMS app.",
   enquiryEmail: "enquiry@samarthops.in",
+  supportEmail: "support@samarthops.in",
   /**
    * WhatsApp number in international format, digits only (country code first,
    * no "+", no spaces). OWNER: fill this in yourself. While it is empty the
