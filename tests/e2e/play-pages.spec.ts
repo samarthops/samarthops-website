@@ -57,6 +57,13 @@ for (const p of PAGES) {
   });
 }
 
+test("the privacy notice is the app's current version, 1.6 (HRMS issue #1019)", async ({ page }) => {
+  await page.goto("/privacy");
+  await expect(page.getByText("Version 1.6.", { exact: true })).toBeVisible();
+  await expect(
+    page.getByText("Weekly sales plans are kept for 24 months after their week"),
+  ).toBeVisible();
+});
 test("support page shows the contact email and the FAQ", async ({ page }) => {
   await page.goto("/support");
   await expect(
